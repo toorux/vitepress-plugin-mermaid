@@ -11,10 +11,14 @@
 <script setup>
 import { onMounted, onUnmounted, ref, toRaw, nextTick, watch } from "vue";
 import { render, init } from "./mermaid";
-// import svgPanZoom from 'svg-pan-zoom';
+import svgPanZoom from 'svg-pan-zoom';
 
 //get mermaid settings
-import { useData } from "vitepress";
+import { useData, defineClientComponent } from "vitepress";
+//
+// const svgPanZoom = defineClientComponent(() => {
+//   return import('svg-pan-zoom');
+// });
 
 
 const pluginSettings = ref({
@@ -140,8 +144,6 @@ const renderChart = async () => {
   const minHeight = panZoomOption.minHeight || '20vh';
   const rectStyle = isFull.value ? `height: 100%;width: 100%;max-height: 100%;max-width: 100%;` : `min-height: ${minHeight}; max-width: 100%;`;
   svgEle.setAttribute('style', `${svgEle.getAttribute('style') ?? ''} ${rectStyle}`);
-
-  const svgPanZoom = await import('svg-pan-zoom');
   const panZoomTiger = svgPanZoom(svgEle, panZoomOption);
 
   const resizeHandle = () => {

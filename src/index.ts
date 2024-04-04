@@ -36,6 +36,7 @@ export const withMermaid = (config: UserConfig) => {
     "debug",
     "cytoscape-cose-bilkent",
     "cytoscape",
+    "svg-pan-zoom"
   ];
   if (!config.vite.resolve) config.vite.resolve = {};
 
