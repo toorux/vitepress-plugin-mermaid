@@ -1,5 +1,6 @@
 import { Plugin } from "vite";
 import { ExternalDiagramDefinition, MermaidConfig } from "mermaid";
+// import svgPanZoom from 'svg-pan-zoom'
 
 // export interface MermaidConfig {
 //   [x: string]: any;
@@ -12,6 +13,7 @@ interface MermaidPluginOptions extends MermaidConfig {
 // Additional configuration for plugin itself. Separate model, not to risk name conflicts with future MermaidConfig options
 export interface MermaidPluginConfig {
   class?: string;
+  panZoomOption?: SvgPanZoom.Options & {minHeight?: string, fullEnabled?: boolean}
 }
 
 const DEFAULT_OPTIONS: MermaidConfig = {

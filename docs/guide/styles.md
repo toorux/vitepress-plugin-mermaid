@@ -2,6 +2,7 @@
 
 ```mmd
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%
+%%{panZoomOption: {'panEnabled': true, 'zoomEnabled': true, 'fullEnabled': true, 'minHeight': '40vh'}}%%
         graph TD
           A[Christmas] -->|Get money| B(Go shopping)
           B --> C{Let me think}
@@ -20,6 +21,8 @@
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%
+%%{panZoomOption: {'panEnabled': true, 'zoomEnabled': true, 'fullEnabled': true, 'minHeight': '40vh'}}%%
+
         graph TD
           A[Christmas] -->|Get money| B(Go shopping)
           B --> C{Let me think}

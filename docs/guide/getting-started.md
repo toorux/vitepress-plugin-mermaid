@@ -28,7 +28,28 @@ export default withMermaid({
     },
     // optionally set additional config for plugin itself with MermaidPluginConfig
     mermaidPlugin: {
-      class: "mermaid my-class", // set additional css classes for parent container 
+      class: "mermaid my-class", // set additional css classes for parent container
+      panZoomOption: {
+        minHeight: '30vh',
+        fullEnabled: false,
+        // refer https://github.com/bumbu/svg-pan-zoom?tab=readme-ov-file#how-to-use for options
+        panEnabled: false,
+        zoomEnabled: false,
+        // When both zoomEnabled and panEnabled are set to false, 
+        // the Pan & Zoom feature will be disabled directly, 
+        // and at that time, all the following parameters will become ineffective.
+        controlIconsEnabled: true,
+        dblClickZoomEnabled: true,
+        mouseWheelZoomEnabled: true,
+        preventMouseEventsDefault: true,
+        zoomScaleSensitivity: 0.2,
+        minZoom: 0.5,
+        maxZoom: 10,
+        fit: true,
+        contain: false,
+        center: true,
+        refreshRate: 'auto',
+      }
     },
 });
 ```

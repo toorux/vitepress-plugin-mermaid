@@ -62,12 +62,16 @@ export const MermaidMarkdown = (md, pluginOptions) => {
       try {
         const key = index;
         const cssClass = pluginOptions?.class || 'mermaid';
+        const panZoomOption = pluginOptions?.panZoomOption || {};
+        const minHeight = panZoomOption.minHeight || '20vh';
         return `
       <Suspense> 
       <template #default>
-      <Mermaid id="mermaid-${key}" class="${cssClass}" graph="${encodeURIComponent(
+      <ClientOnly>
+      <Mermaid id="mermaid-${key}" class="${cssClass}" pan-zoom-option="${encodeURIComponent(JSON.stringify(panZoomOption))}" maxHeight="${minHeight}" graph="${encodeURIComponent(
           token.content
         )}"></Mermaid>
+      </ClientOnly>
       </template>
         <!-- loading state via #fallback slot -->
         <template #fallback>

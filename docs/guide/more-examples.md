@@ -1,6 +1,11 @@
 ---
 mermaidTheme: forest
 title: A more complex example
+panZoomOption:
+    panEnabled: true
+    zoomEnabled: true
+    minHeight: 30vh
+    fullEnabled: true
 ---
 
 # Frontmatter Setup
@@ -11,6 +16,11 @@ title: A more complex example
 ---
 mermaidTheme: forest
 title: A more complex example
+panZoomOption:
+    panEnabled: true
+    zoomEnabled: true
+    minHeight: 30vh
+    fullEnabled: true
 ---
 ```
 
